@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300i,400,600|Raleway');
+
+html {
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1.15;
+	font-size: 16px;
+	color: #333;
+	font-weight: 400;
+}
+
+#site-title {
+	font-size: 1.8em;
+}
+
+nav {
+	height: 30px;
+	justify-content: space-between;
+	display: inline-block;
+}
+
+header {
+
+}
+
+#header-title {
+	/* float: left; */
+	display: inline-block;
+	font-size: 1.6em;
+}
+
+#sidebar-nav {
+	/* box-sizing: border-box; */
+	color: inherit;
+	cursor: auto; /* was ist das? */
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.9em;
+	opacity: 1;
+/* 	text-align: right; */
+	/* width: auto; */
+	/* margin-right: 10%; */
+	/* vertical-align: top; */
+}
+
+#content {
+	/* margin: 5% 20% 5% 20%; */
+}
+
+.article-list {
+	margin: 5% 30% 5% 20%;
+}
+
+.article-list-item {
+	min-height: 85px;
+	margin-bottom: 15px;
+}
+
+.article-list-item p {
+	margin: 5px 0px;
+}
+
+.article-list-item h1, h2, h3, h4, h5, h6 {
+	font-size: 1em;
+	margin: 5px 0px;
+}
+
+.article-image-wrapper {
+	max-width: 100px;
+	width: 20%;
+	margin-right: 0.5em;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.article-image {
+	background-color: white; 
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	max-width: 100px;
+	border-radius: 4px;
+	min-height: 85px;
+}
+
+.article-image img {
+
+}
+
+.article-text-wrapper {
+	/* position: relative; */
+	/* direction: ltr; */
+	vertical-align: top;
+	width: 75%;
+	margin-left: auto;
+	display: inline-block;
+}
+
+.article-list-title {
+	font-weight: 600;
+	font-size: 1.33em;
+	margin-bottom: 0px;
+}
+
+.article-list-meta {
+	font-weight: 300;
+	font-style: italic;
+	font-size: 0.9em;
+	margin-top: 0.1rem;
+}
+
+.article-list-description {
+	font-weight: 400;
+	font-size: 1em;
+	margin-top: 0.5rem;
+}
+
+.article-list-summary {
+	font-size: 0.9em;
+	margin-top: 0.5rem;
+}
+
+.dimming {
+	transition: opacity .15s ease-in;
+}
+
+.dimming:focus, .dimming:hover {
+	opacity: 0.5;
+}
+
+.sidebar-nav-item {
+	margin-right: 1rem;
+}
+
+a:any-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.grey {
+	color: #888;
+}
+
+div.taxo-link {
+	margin-top: 0.5em;
+}
+
+a.taxo-link {
+/* 	background-color: #eee; */
+/* 	padding: 0.1em 0.3em; */
+/* 	margin-right: 0.1em;	 */
+/* 	border-radius: 4px; */
+}
+
+a.taxo-link:hover {
+	color: #333;
+	text-decoration: underline;
+}

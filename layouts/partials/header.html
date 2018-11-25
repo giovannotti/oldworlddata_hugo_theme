@@ -1,0 +1,11 @@
+<nav>
+	<div id="header-title">
+    	<a href=" {{ .Site.BaseURL }} ">{{ .Site.Title }}</a>
+	</div>
+	<div id="sidebar-nav">
+	    {{ $currentPage := . }}
+	    {{ range .Site.Menus.main }}
+	    <a class="dimming sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+	    {{ end }}
+    </div>
+</nav>

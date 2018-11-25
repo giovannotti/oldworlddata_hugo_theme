@@ -1,0 +1,46 @@
+{{ define "main" }}
+<main>
+     
+    	<!-- <header>
+      		<h1 id="site-title">{{ .Title }}</h1>
+      	</header> -->
+     	{{ .Content }}
+    
+	    <div class="article-list">
+	    {{ range first 4 .Pages }}
+	    <article>
+	        <div class="article-list-item">
+	        	<div class="article-image-wrapper">
+		        	<a href="{{ .Permalink }}">
+		        		<div class="article-image" style="background-image: url('{{ .Params.Image }}');">
+		        		</div>
+		        	</a>
+		        </div>
+	        	<div class="article-text-wrapper">
+		        	<div class="article-list-title">
+		            	<a href="{{ .Permalink }}">{{.Title}}</a>
+		            </div>
+		            <div class="article-list-meta grey">
+		            	<i class="far fa-clock"></i> {{ .Date.Format "02 Jan 2006" }} 
+		            	{{ if isset .Params "category" }} 
+		            	----- <i class="fas fa-folder"></i> {{ range .Params.Category }}<a href='{{ "/categories/" | relLangURL }}{{ . | urlize }}' class="taxo-link">[ {{ . }} ]</a> {{ end }}
+		            	{{ end }}
+		            	{{ if isset .Params "tags" }}
+		        		----- <i class="fas fa-tags"></i> {{ range .Params.Tags }}<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}' class="taxo-link">[ {{ . }} ]</a> {{ end }}
+		        		{{ end }}
+		            </div>
+		            <div class="article-list-description grey">
+		            	{{ if isset .Params "description" }}
+		            	{{ .Params.Description }}
+		            	{{ end }}
+		            </div>
+		            <div class="article-list-summary grey">
+		            	{{ .Summary }}
+		            </div>
+		        </div>
+	        </div>
+	        </article>
+	    {{ end }}
+	    </div>
+</main>
+{{ end }}
