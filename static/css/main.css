@@ -2,7 +2,7 @@
 
 html {
 	font-family: 'Source Sans Pro', sans-serif;
-	line-height: 1.15;
+	line-height: 1.20;
 	font-size: 16px;
 	color: #333;
 	font-weight: 400;
@@ -13,9 +13,10 @@ html {
 }
 
 nav {
-	height: 30px;
+	margin: 1em 1em;
 	justify-content: space-between;
-	display: inline-block;
+	display: flex;
+	align-items: center;
 }
 
 header {
@@ -23,32 +24,42 @@ header {
 }
 
 #header-title {
-	/* float: left; */
-	display: inline-block;
-	font-size: 1.6em;
+	font-size: 1.65em;
+	/* border-radius: 4px; */
+	/* padding: 0.1rem 0.5rem 0.2rem 0.5rem; */
+	color: #B22222;
+	/* box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.8); */
 }
 
 #sidebar-nav {
-	/* box-sizing: border-box; */
-	color: inherit;
+	color: #B22222;
 	cursor: auto; /* was ist das? */
-	display: inline-block;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	font-size: 0.9em;
 	opacity: 1;
-/* 	text-align: right; */
-	/* width: auto; */
-	/* margin-right: 10%; */
-	/* vertical-align: top; */
 }
 
-#content {
-	/* margin: 5% 20% 5% 20%; */
+footer {
+	color: #B22222;
+	cursor: auto; /* was ist das? */
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.9em;
+	opacity: 1;
+	padding: 1em 1em;
+	text-align: center;
+	background-image: linear-gradient(to bottom, white 10%, rgba(255,255,255,0.8) 30%, transparent 100%), url("/img/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 20vh;
+	height:  50vh;
+	width: auto;
 }
 
 .article-list {
-	margin: 5% 30% 5% 20%;
+	margin: 5% 20% 0% 20%;
 }
 
 .article-list-item {
@@ -82,10 +93,6 @@ header {
 	max-width: 100px;
 	border-radius: 4px;
 	min-height: 85px;
-}
-
-.article-image img {
-
 }
 
 .article-text-wrapper {

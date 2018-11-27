@@ -1,11 +1,9 @@
 {{ define "main" }}
 <main>
-     
-    	<!-- <header>
+<!--     	<header>
       		<h1 id="site-title">{{ .Title }}</h1>
       	</header> -->
      	{{ .Content }}
-    
 	    <div class="article-list">
 	    {{ range first 4 .Pages }}
 	    <article>
