@@ -1,0 +1,14 @@
+<div class="toc-area grey">
+	<div class="categories">
+		<h3 class="darkgrey"><i class="fas fa-folder"></i> <a href="/categories/">Categories</a></h3>
+		{{ range .Site.Taxonomies.categories.Alphabetical }}
+			<a class="taxo-link article-meta nowrap" href="{{ "/categories/" | relLangURL }}{{ .Name | urlize }}"> §{{ .Name }} </a>	
+		{{ end }}
+	</div>
+	<div class="tags">
+		<h3 class="darkgrey"><i class="fas fa-tags"></i> <a href="/tags/">Tags</a></h3>
+		{{ range .Site.Taxonomies.tags.Alphabetical }}
+			<a class="article-meta nowrap taxo-link" href="{{ "/tags/" | relLangURL }}{{ .Name | urlize }}"> #{{ .Name }} </a>	
+		{{ end }}
+	</div>
+</div>

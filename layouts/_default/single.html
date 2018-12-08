@@ -1,17 +1,51 @@
 {{ define "main" }}
-  <main>
+  <main class="article">
+    <header>
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ if isset .Params "date"}}
+        <div class="article-meta grey">
+          <i class="far fa-clock"></i> 
+          {{ .Date.Format "02 Jan 2006" }} 
+        </div>
+      {{ end }}
+      {{ if isset .Params "categories" }} 
+        <div class="article-meta grey article-tags">  
+          <i class="fas fa-folder"></i> {{ range .Params.Categories }}<a href='{{ "/categories/" | relLangURL }}{{ . | urlize }}' class="taxo-link"> §{{ . }} </a> {{ end }}
+        </div>
+      {{ end }}
+        {{ if isset .Params "tags" }}
+        <div class="article-meta grey article-tags">
+        <i class="fas fa-tags"></i> {{ range .Params.Tags }}<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}' class="taxo-link"> #{{ . }} </a> {{ end }}
+        </div>
+      {{ end }}
+      {{ if isset .Params "description" }}
+        <div class="article-description grey">
+        {{ .Params.Description }}
+        </div>
+      {{ end }}
+      {{ if isset .Params "image" }}
+        <div class="article-image">
+          <img src='{{ .Params.Image }}'>
+        </div>
+      {{ end }}
+    </header>
+    {{ partial "toc.html" . }}
+    <article class="article-content">
       {{ .Content }}
-          <ul class="contents">
-          {{ range .Pages }} 
-          {{/* range .Paginator.Pages */}}
-              <li>
-                  {{.Title}}
-                  <div>
-                    {{ partial "summary.html" . }}
-                  </div>
-              </li>
-          {{ end }}
-          </ul>
-      {{ partial "pagination.html" . }}
+    </article>
+    {{ if (or .PrevInSection .NextInSection) }}
+      <hr>
+    {{ end }}
+    <div class="articles-nav-older">
+      {{ with .PrevInSection }}
+        Previous {{ .Section }}: <br><a class="dimming" href="{{ .Permalink }}">[ {{ .Title }} ]</a>
+      {{ end }}
+    </div>
+    <div class="articles-nav-newer">
+      {{ with .NextInSection }}
+        Next {{ .Section }}: <br><a class="dimming" href="{{ .Permalink }}">[ {{ .Title }} ]</a>
+      {{ end }}
+    </div>
+    </div>
   </main>
 {{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main>
+    <header>  
+        <h1 class="page-title">{{ .Title }}</h1>        
+        {{ .Content }}
+    </header>
+    {{ partial "cat-tag-cloud.html" . }}
+	<div class="article-list categories grey">
+		{{ $type := .Type }}
+		{{ range .Data.Terms.ByCount }}
+		<a class="nowrap taxo-link article-meta" href="{{ $type | relLangURL }}{{ .Name | relLangURL }}">
+		{{ .Name }} [ {{ .Count }} ]
+		</a>
+		{{ end }}
+	</div>
+</main>
+{{ end }}
