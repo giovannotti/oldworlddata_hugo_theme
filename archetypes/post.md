@@ -1,11 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-author: Johannes
-type: ""
+description: ""
+author: Johannes Friedl
 date: {{ .Date }}
-subtitle: ""
 image: ""
 tags: []
-category: []
+categories: []
 draft: true
 ---
