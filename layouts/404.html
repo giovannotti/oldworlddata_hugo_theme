@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+    	<header>
+      		<h1 id="site-title"><a href="{{ "/" | relURL }}">Sorry...</a></h1>
+      	</header>
+      	<center>
+	     	<p>...what you are seeking for does not exist on this page.</p>
+	     	<p>Feel free to visit our <span class="red"><a class="dimming" href="{{ "/" | relURL }}">homepage</a></span>.</p>
+     	</center>
+     	{{ partial "cat-tag-cloud.html" . }}
+</main>
+{{ end }}
