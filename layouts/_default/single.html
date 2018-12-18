@@ -1,6 +1,8 @@
 {{ define "main" }}
   <main class="article">
     <header>
+      <div class="header-thumb-wrapper" style="background-image: url('{{ .Params.Image }}');">
+        <div class="header-text-wrapper">
       <h1 class="page-title">{{ .Title }}</h1>
       {{ if isset .Params "date"}}
         <div class="article-meta grey">
@@ -23,29 +25,36 @@
         {{ .Params.Description }}
         </div>
       {{ end }}
-      {{ if isset .Params "image" }}
+<!--       {{ if isset .Params "image" }}
         <div class="article-image">
           <img src='{{ .Params.Image }}'>
         </div>
-      {{ end }}
+      {{ end }} -->
+    </div>
+  </div>
     </header>
     {{ partial "toc.html" . }}
     <article class="article-content">
       {{ .Content }}
-    </article>
     {{ if (or .PrevInSection .NextInSection) }}
-      <hr>
     {{ end }}
-    <div class="articles-nav-older">
+    <div class="articles-nav">
       {{ with .PrevInSection }}
-        Previous {{ .Section }}: <br><a class="dimming" href="{{ .Permalink }}">[ {{ .Title }} ]</a>
+      <div class="older">
+        <a class="dimming" href="{{ .Permalink }}">
+        Previous {{ .Section }}: <br>[ {{ .Title }} ]
+        </a>
+      </div>
       {{ end }}
-    </div>
-    <div class="articles-nav-newer">
       {{ with .NextInSection }}
-        Next {{ .Section }}: <br><a class="dimming" href="{{ .Permalink }}">[ {{ .Title }} ]</a>
+      <div class="newer">
+        <a class="dimming" href="{{ .Permalink }}">
+        Next {{ .Section }}: <br>[ {{ .Title }} ]
+        </a>
+      </div>
       {{ end }}
     </div>
+    </article>
     </div>
   </main>
 {{ end }}

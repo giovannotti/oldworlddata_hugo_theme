@@ -9,7 +9,7 @@
         {{ range .Paginator.Pages }}
         {{ partial "article-list.html" . }}
         {{ end }}
-        </div>
         {{ partial "pagination.html" . }}
+    </div>
 </main>
 {{ end }}
