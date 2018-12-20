@@ -9,17 +9,15 @@
 	        	<!-- <div class="article-thumb-wrapper"> -->
 	        	<div class="article-thumb-wrapper" style="background-image: url('{{ .URL }}{{ .Params.Image }}');">
 	        	<div class="article-text-wrapper">	        		
-		        	<div class="article-list-title">
+		        	<h2 class="article-list-title">
 		            	<a href="{{ .Permalink }}">{{.Title}}</a>
-		            </div>
-		            <div class="article-date">
-	        			{{ .Date.Format "02 Jan 2006" }}
-	        		</div>	
-		            <div class="article-description grey">
-		            	{{ if isset .Params "description" }}
-		            	{{ .Params.Description }}
-		            	{{ end }}
-		            </div>
+		            </h2>
+		            {{ if isset .Params "date" }}
+		            <span class="article-date">{{ .Date.Format "02 Jan 2006" }}</span>
+		            {{ end }}
+	        		{{ if isset .Params "description" }}	
+		            <span class="article-description grey">{{ .Params.Description }}</span>
+		            {{ end }}
 		            <div class="article-meta justify-space-between">
 		            	<div class="article-tags owd-color">
 			            	{{ if isset .Params "categories" }} 
