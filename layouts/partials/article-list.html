@@ -6,27 +6,27 @@
 		        		</div>
 		        	</a>
 		        </div> -->
+	        	<!-- <div class="article-thumb-wrapper"> -->
 	        	<div class="article-thumb-wrapper" style="background-image: url('{{ .URL }}{{ .Params.Image }}');">
-	        	<div class="article-text-wrapper">
-	        	
-	        		<div class="article-meta grey">
-	        			{{ .Date.Format "02 Jan 2006" }}
-	        		</div>		        		
+	        	<div class="article-text-wrapper">	        		
 		        	<div class="article-list-title">
 		            	<a href="{{ .Permalink }}">{{.Title}}</a>
 		            </div>
+		            <div class="article-date">
+	        			{{ .Date.Format "02 Jan 2006" }}
+	        		</div>	
 		            <div class="article-description grey">
 		            	{{ if isset .Params "description" }}
 		            	{{ .Params.Description }}
 		            	{{ end }}
 		            </div>
-		            <div class="article-meta grey justify-space-between">
-		            	<div class="article-tags align-left">
+		            <div class="article-meta justify-space-between">
+		            	<div class="article-tags owd-color">
 			            	{{ if isset .Params "categories" }} 
 			            	<i class="fas fa-folder"></i> {{ range .Params.Categories }}<a href='{{ "/categories/" | relLangURL }}{{ . | urlize }}' class="taxo-link"> §{{ . }} </a> {{ end }}
 			            	{{ end }}
 		            	</div>		            	
-		            	<div class="article-tags align-right">
+		            	<div class="article-tags owd-color">
 			            	{{ if isset .Params "tags" }}
 			        		<i class="fas fa-tags"></i> {{ range .Params.Tags }}<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}' class="taxo-link"> #{{ . }} </a> {{ end }}
 			        		{{ end }}

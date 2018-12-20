@@ -4,27 +4,37 @@
       <div class="header-thumb-wrapper" style="background-image: url('{{ .Params.Image }}');">
         <div class="header-text-wrapper">
       <h1 class="page-title">{{ .Title }}</h1>
+      <div class="article-page-author-date justify-space-between">
       {{ if isset .Params "date"}}
-        <div class="article-meta grey">
-          <i class="far fa-clock"></i> 
+          <div class="article-page-date">
+          <i class="far fa-calendar"></i> 
           {{ .Date.Format "02 Jan 2006" }} 
         </div>
       {{ end }}
+      {{ if isset .Params "author"}}
+        <div class="">
+          <i class="far fa-user"></i> 
+          {{ .Params.Author }} 
+        </div>
+      {{ end }}
+      </div>
+<!--       {{ if isset .Params "description" }}
+        <div class="article-description grey">
+        {{ .Params.Description }}
+        </div>
+      {{ end }} -->
+      <div class="article-meta justify-space-between">
       {{ if isset .Params "categories" }} 
-        <div class="article-meta grey article-tags">  
+        <div class="article-page-tags owd-color">  
           <i class="fas fa-folder"></i> {{ range .Params.Categories }}<a href='{{ "/categories/" | relLangURL }}{{ . | urlize }}' class="taxo-link"> §{{ . }} </a> {{ end }}
         </div>
       {{ end }}
         {{ if isset .Params "tags" }}
-        <div class="article-meta grey article-tags">
+        <div class="article-page-tags owd-color">
         <i class="fas fa-tags"></i> {{ range .Params.Tags }}<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}' class="taxo-link"> #{{ . }} </a> {{ end }}
         </div>
       {{ end }}
-      {{ if isset .Params "description" }}
-        <div class="article-description grey">
-        {{ .Params.Description }}
-        </div>
-      {{ end }}
+    </div>
 <!--       {{ if isset .Params "image" }}
         <div class="article-image">
           <img src='{{ .Params.Image }}'>

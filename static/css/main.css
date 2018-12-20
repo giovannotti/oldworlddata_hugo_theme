@@ -47,12 +47,12 @@ html {
 	font-family: 'Source Sans Pro', 'Liberation Sans', sans-serif;
 	line-height: 1.5;
 	font-size: 16px;
-	color: #333;
+	color: var(--owd-grey);
 	font-weight: 400;
 }
 
 #site-title {
-	font-size: 1.8em;
+	font-size: 2em;
 }
 
 nav#sidebar {
@@ -66,7 +66,7 @@ nav#sidebar {
 
 .toc-area, .cat-tag-area, #TOC {
 	position: fixed;
-	top: 30%;
+	top: 15%;
 	right: 2em;
 	max-width: 15%;
 	font-family: 'Liberation Sans';
@@ -150,7 +150,7 @@ nav#TableOfContents a:focus,
 }
 
 header {
-	text-align: center;
+	/* text-align: center; */
 }
 
 #header-title {
@@ -306,7 +306,7 @@ button:hover {
 }
 
 main {
-	margin: 5em 20% 0em 20%;
+	margin: 5em 25% 0em 25%;
 }
 
 main.article {
@@ -322,7 +322,7 @@ section {
 }
 
 .article-list {
-	margin: 0em 10%;
+	/* margin: 0em 10%; */
 }
 
 .article-recent {
@@ -331,9 +331,10 @@ section {
 
 .article-list-item {
 	/* min-height: 100px; */
-	margin: 1.5em 0;
-	text-align: center;
+	margin: 1em 0;
+	/* text-align: center; */
 	position: relative;
+	/* border-left: 2px solid var(--owd-smokegrey); */
 }
 
 .article-list-item p {
@@ -348,81 +349,116 @@ section {
 .article-thumb-wrapper {
 	/* max-width: 100px; */
 	width: 100%;
-	/* margin-right: 0.5em; */
+	/* margin-left: 1em; */
 	/* display: inline-block; */
 	/* vertical-align: top; */
-	/* background-color: white;  */
+	background-color: var(--owd-smokegrey); 
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: right;
 	background-size: cover;
-	
 }
 
 .article-text-wrapper {
   	position: relative;
  	vertical-align: top;
-	width: 100%;
-	margin-left: auto;
+	width: calc(100% - 25%);
+	/* margin-left: 1em; */
 	display: inline-block;
 	z-index: 1;
-	background-color: rgba(255,255,255,0.7);
+	/* background-color: rgba(255,255,255,0.7); */
+	background-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 15%, rgba(255,255,255,0.8) 25%, white 30%, white 100%);
 	transition: opacity ease 0.5s;
+	line-height: 1.2em;
+	padding: 0.5em;
+	padding-left: 0;
+	padding-right: 25%;
+
 }
 
-.article-text-wrapper:hover {
+/* .article-text-wrapper:hover {
 	transition: opacity ease 0.5s;
 	color: black;
-	background-color: rgba(255,255,255,0.9);
-}
+	background-color: rgba(255,255,255,0.5);
+} */
 
 .header-thumb-wrapper {
-	width: 100%;
+	width: 60%;
+	background-color: var(--owd-smokegrey); 
 	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	
+	background-position: right;
+	background-size: 35% auto;
+	margin: 3em 20% 1em 20%;
 }
 
 .header-text-wrapper {
-	margin: 2rem 25%;
-	padding: 1rem;
-  	/* position: relative; */
- 	/* vertical-align: top; */
-	/* width: 50%; */
+  	position: relative;
+ 	vertical-align: top;
+	width: calc(100% - 30%);
+	/* margin-left: 1em; */
 	display: inline-block;
-	/* z-index: 1; */
-	background-color: rgba(255,255,255,0.9);
+	z-index: 1;
+	/* background-color: rgba(255,255,255,0.7); */
+	background-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 15%, rgba(255,255,255,0.8) 25%, white 30%, white 100%);
+	transition: opacity ease 0.5s;
+	line-height: 1.2em;
+	padding: 0.5em;
+	padding-left: 0;
+	padding-right: 30%;
 }
 
-/* 
-.article-text-wrapper::after {
-	content: "";
-	opacity: 0.2;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	position: absolute;
-	z-index: -1; 
-} */
+h1.page-title {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	line-height: 1em
+}
+
+.article-page-author-date {
+	font-weight: 300;
+	font-size: 1em;
+	margin-top: 0.4em;
+	margin-bottom: 0.6em;
+	border-bottom: 1px solid var(--owd-smokegrey);
+	padding-bottom: 0.7em;
+}
+
+.article-page-date {
+	margin-right: 1em;
+}
+
+.article-page-tags {
+	vertical-align: bottom;
+	font-family: 'Liberation Sans';
+	text-transform: uppercase;
+	font-size: 0.8em;
+	margin-right: 1em;
+	margin-top: 0.2em;
+}
 
 .article-list-title {
 	font-weight: 600;
 	font-size: 1.33em;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.2em;
 	margin-top: 0px;
 }
 
 .article-list-summary {
 	font-size: 0.9em;
-	margin-top: 0.5rem;
+	margin-top: 0.2rem;
+}
+
+.article-date {
+	float: left;
+	font-weight: 300;
+	font-size: 0.8em;
+	margin-top: 0rem;
+	margin-right: 0.5em;
 }
 
 .article-meta {
 	font-weight: 300;
-	font-style: italic;
+	/* font-style: italic; */
 	font-size: 0.9em;
-	margin-top: 0.5rem;
+	margin-top: 0rem;
 }
 
 .article-tags {
@@ -430,7 +466,8 @@ section {
 	font-family: 'Liberation Sans';
 	text-transform: uppercase;
 	font-size: 0.75em;
-	margin: 1em;
+	margin-right: 1em;
+	margin-top: 0.2em;
 }
 
 .align-right {
@@ -443,12 +480,13 @@ section {
 
 .justify-space-between {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .article-description {
 	font-weight: 400;
 	font-size: 1em;
+	font-style: italic;
 	/* margin-top: 0.5rem; */
 }
 
@@ -488,10 +526,6 @@ section {
 	float: right;
 	text-align: right;
 	margin-left: 1em;
-}
-
-h1.page-title {
-	margin: 0;
 }
 
 .article-content {
@@ -581,14 +615,14 @@ a:any-link {
 }
 
 .grey {
-	color: #888;
+	color: var(--owd-lightgrey);
 }
 
 .darkgrey {
-	color: #333;
+	color: var(--owd-grey);
 }
 
-.red {
+.owd-color {
 	color: var(--owd-color);
 }
 
@@ -607,6 +641,15 @@ a.taxo-link:hover {
 
 .nowrap {
 	white-space: nowrap;
+}
+
+.float-left {
+	float: left;
+	margin-right: 1em;
+}
+
+.clear-left {
+	clear: left;
 }
 
 .pagination-wrapper {
@@ -705,8 +748,9 @@ tfoot {
 		margin: 0em 10%;
 	}
 
-	.header-text-wrapper {
-		margin: 2rem 5%;
+	.header-thumb-wrapper {
+		margin: 2em 5% 1em 5%;
+		width: 90%;
 	}
 
 	.footer-text-area {
@@ -742,5 +786,9 @@ tfoot {
 
 	.formview {
 		min-width: 200px;
+	}
+
+	.header-thumb-wrapper {
+		background-size: auto 100%;
 	}
 }
