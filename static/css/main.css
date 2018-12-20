@@ -347,12 +347,7 @@ section {
 }
 
 .article-thumb-wrapper, .header-thumb-wrapper {
-	/* max-width: 100px; */
 	width: 100%;
-	/* margin-left: 1em; */
-	/* display: inline-block; */
-	/* vertical-align: top; */
-	/* background-color: var(--owd-smokegrey);  */
 	background-repeat: no-repeat;
 	background-position: right;
 	background-size: 35% auto;
