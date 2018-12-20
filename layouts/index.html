@@ -1,12 +1,12 @@
 {{ define "main" }}
 <main>
-<!--     	<header>
-      		<h1 id="site-title">{{ .Title }}</h1>
-      	</header> -->
-     	{{ .Content }}
+    	<header>
+    		{{ .Content }}
+      		<h1 id="site-title">Recent Contributions</h1>
+      	</header>
      	{{ partial "cat-tag-cloud.html" . }}
 	    <div class="article-list article-recent">
-	    {{ range first 3 .Pages }}
+	    {{ range first 5 .Pages }}
 		{{ partial "article-list.html" . }}
 	    {{ end }}
 	    	<div class="more-articles">
